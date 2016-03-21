@@ -1,0 +1,18 @@
+<head>
+  <div class="header"> DrDuke. </div>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,400italic,700italic,700,900,900italic' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <div class="all">
+      <%= image_tag("giphy.gif") %>
+      <div id="user_nav">
+      <% if user_signed_in? %>
+        Signed in as <%= current_user.email %>. Not you?
+      <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+      <% else %>
+        <p> Already have an account ? Sign In ! </p> <a href="/users/sign_in" title="sign in !"> SIGN IN </a> </p>
+        <p> Want to join ? Sign up ! </p> <a href="/users/sign_up" title="sign up !"> SIGN UP </a> </p>
+      <% end %>
+    </div>
+  </div>
+</body>
